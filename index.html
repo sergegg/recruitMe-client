@@ -12,6 +12,51 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
+      <h1>Hello!</h1>
+
+      <p id="message">message board</p>
+      <div id="pre-signIn">
+      <form id="sign-up" action="POST">
+    <input placeholder="Email" type="email" name="credentials[email]" />
+    <input placeholder="Desired Password" type="password" name="credentials[password]" />
+    <input placeholder="Confirm Password" type="password" name="credentials[password_confirmation]" />
+    <button type="submit" name="button">Sign up!</button>
+      </form>
+      <form id="sign-in" action="POST">
+    <input placeholder="Your Email" type="text" name="credentials[email]" />
+    <input placeholder="Your Password" type="password" name="credentials[password]" />
+    <button type="submit" name="button">Sign in!</button>
+      </form>
+    </div>
+    <div id="post-signIn">
+      <form id="sign-out" action='DELETE'>
+  <button type="button" name="button">Sign Out!</button>
+  <p>Hope to see you back soon!</p>
+      </form>
+      <form id="change-pw" action="PATCH">
+  <input placeholder="Old Password" type="password" name="passwords[old]"/>
+  <input placeholder="New Password" type="password" name="passwords[new]"/>
+  <button type="submit" name="button">Confirm Changes</button>
+      </form>
+      <form id="create-profile" action="POST">
+        <input placeholder="Full Name" type="name" name="recruitMe[name]"/>
+        <input placeholder="Date Of Birth (YY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
+        <input placeholder="Resume URL" type="link" name="recruitMe[resume_Url]"/>
+        <button type="submit" name="button">Create now!</button>
+      </form>
+      <form id="edit-profile" action="PATCH">
+        <input placeholder="Other Full Name" type="name" name="recruitMe[name]"/>
+        <input placeholder="Other Date Of Birth (YY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
+        <input placeholder="Other Resume URL" type="link" name="recruitMe[resume_Url]"/>
+        <button type="submit" name="button">Confirm edit!</button>
+      </form>
+      <form id="get-profile" action="GET">
+        <button type="click" name="button">See all RecruitMe Profiles!</button>
+      </form>
+      <form id="delete-profile" action="DELETE">
+        <input placeholder="recruitMe ID" type="text" name="recruitMe[_id]" />
+        <button type="click" name="button">Delete a recruitMe!</button>
+      </form>
+    </div>
+  </body>
 </html>

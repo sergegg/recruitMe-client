@@ -1,9 +1,9 @@
 'use strict'
-
+// https://helprecruitme.herokuapp.com
 let apiUrl
 const apiUrls = {
-  production: '<replace-with-heroku-url>',
-  development: 'http://localhost:4741'
+  production: 'https://helprecruitme.herokuapp.com',
+  development: 'http://localhost:8000'
 }
 
 if (window.location.hostname === 'localhost') {
