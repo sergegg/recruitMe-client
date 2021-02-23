@@ -4,22 +4,22 @@ const store = require('./../store')
 
 const createProfile = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/recruitMe/',
+    url: config.apiUrl + '/recruitMes/',
     method: 'POST',
     headers: {
       authorization: 'Token ' + store.user.token
     },
-    data: data
+    data: JSON.stringify(data)
   })
 }
 const editProfile = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/recruitMe/' + data.recruitMe._id,
+    url: config.apiUrl + '/recruitMes/' + data.recruitMe._id,
     method: 'PATCH',
     headers: {
       authorization: 'Token ' + store.user.token
     },
-    data: data
+    data: JSON.stringify(data)
   })
 }
 
@@ -36,7 +36,7 @@ const editProfile = function (data) {
 
 const index = function () {
   return $.ajax({
-    url: config.apiUrl + '/recruitMe/',
+    url: config.apiUrl + '/recruitMes/',
     method: 'GET',
     headers: {
       authorization: 'Token ' + store.user.token
@@ -45,7 +45,7 @@ const index = function () {
 }
 const deleteOne = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/recruitMe/' + data.recruitMe._id,
+    url: config.apiUrl + '/recruitMes/' + data.recruitMe._id,
     method: 'DELETE',
     headers: {
       authorization: 'Token ' + store.user.token
