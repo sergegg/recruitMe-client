@@ -21,7 +21,7 @@ $(() => {
   // create a new profile
   $('#create-profile').on('submit', profileEvents.onCreateProfile)
   // edit your profile
-  $('#edit-profile').on('submit', profileEvents.onEditProfile)
+  $('#edit-profile').on('click', profileEvents.onEditProfile)
   // on get profile
   $('#get-profile').on('click', profileEvents.onViewProfile)
   // on delete profile

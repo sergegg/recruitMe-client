@@ -7,6 +7,7 @@ const onError = function (error) {
 }
 
 const onCreateProfileSuccess = function (event) {
+  console.log('whats the data when we create a profile in API', event)
   $('#message').text('You have created your Profile successfully!')
   $('#display-Profile').hide()
   $('#display-Profile').show()
@@ -29,6 +30,7 @@ const onEditProfileSuccess = function (event) {
 }
 
 const onGetProfilesSuccess = function (event) {
+  console.log('event in ui.js index', event)
   $('#message').text('Below are all of the Profiles')
   $('#message').hide()
   $('#message').text('')
@@ -41,6 +43,11 @@ const onGetProfilesSuccess = function (event) {
   <h6>Related URL: ${event.recruitMes[i].resume_Url}</h6>
   <h6>Extra skills are:  ${event.recruitMes[i].extra_skills}</h6>
 `
+    // $('#delete-me').on('click', function (event) {
+    //   console.log('event in onclick', event)
+    //   const item = event.recruitMes
+    //   console.log('whats item ', item)
+    // })
     $('#message').append(profileHTML)
   }
 }

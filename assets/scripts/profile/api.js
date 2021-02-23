@@ -3,6 +3,8 @@ const config = require('./../config')
 const store = require('./../store')
 
 const createProfile = function (data) {
+  console.log('whats the data when we create a profile in API', data)
+  console.log(JSON.stringify(data))
   return $.ajax({
     url: config.apiUrl + '/recruitMes/',
     method: 'POST',
@@ -13,8 +15,9 @@ const createProfile = function (data) {
   })
 }
 const editProfile = function (data) {
+  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/recruitMes/' + data.recruitMe._id,
+    url: config.apiUrl + '/recruitMes/' + data.recruitMes._id,
     method: 'PATCH',
     headers: {
       authorization: 'Token ' + store.user.token
@@ -44,13 +47,15 @@ const index = function () {
   })
 }
 const deleteOne = function (data) {
+  console.log(data)
+  console.log(JSON.stringify(data))
   return $.ajax({
-    url: config.apiUrl + '/recruitMes/' + data.recruitMe._id,
+    url: config.apiUrl + '/recruitMes/' + data.recruitMes._id,
     method: 'DELETE',
+    data: JSON.stringify(data),
     headers: {
       authorization: 'Token ' + store.user.token
-    },
-    data: data
+    }
   })
 }
 module.exports = {

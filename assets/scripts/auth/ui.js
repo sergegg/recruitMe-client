@@ -27,6 +27,7 @@ const changePwSuccess = function (response) {
 const signOutSuccess = function (response) {
   $('#message').text('Signed out successfully, come back soon! ')
   // erase user token
+  $('#post-signIn').hide()
   store.user = null
   // reset
   $('form').trigger('reset')
