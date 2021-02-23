@@ -15,8 +15,8 @@ const config = require('./../config')
 const store = require('./../store')
 
 const signUp = function (data) {
-  console.log('what is data', data)
-  console.log('what is data', data.credentials)
+  // console.log('what is data', data)
+  // console.log('what is data', data.credentials)
   return $.ajax({
     url: config.apiUrl + '/sign-up/',
     method: 'POST',
@@ -33,7 +33,7 @@ const signIn = function (data) {
 }
 
 const changePw = function (data) {
-  console.log('data is: ', data)
+  // console.log('data is: ', data)
   return $.ajax({
     url: config.apiUrl + '/change-pw/',
     method: 'PATCH',

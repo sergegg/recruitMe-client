@@ -14,8 +14,8 @@ const onCreateProfile = function (event) {
 }
 const onEditProfile = function (event) {
   event.preventDefault()
-  console.log(event)
-  console.log(event.data)
+  // console.log(event)
+  // console.log(event.data)
   const data = getFormFields(event.target)
   api.editProfile(data)
     .then(ui.onEditProfileSuccess)
@@ -35,7 +35,7 @@ const onEditProfile = function (event) {
 
 const onViewProfile = function (event) {
   event.preventDefault()
-  console.log('event in events.js index', event)
+  // console.log('event in events.js index', event)
   api.index()
     .then(ui.onGetProfilesSuccess)
     .catch(ui.onError)

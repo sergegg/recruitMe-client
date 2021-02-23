@@ -6,7 +6,7 @@ const onError = function (error) {
   $('#message').text('Failed to execute, please try again or fix the code. ', error)
 }
 const signUpSuccess = function (response) {
-  console.log('did we make it into ui?? ', response)
+  // console.log('did we make it into ui?? ', response)
   $('#message').text('User signed up successfully!! :) welcome to the website')
   // reset form
   $('form').trigger('reset')

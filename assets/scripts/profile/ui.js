@@ -7,12 +7,12 @@ const onError = function (error) {
 }
 
 const onCreateProfileSuccess = function (event) {
-  console.log('whats the data when we create a profile in API', event)
+  // console.log('whats the data when we create a profile in API', event)
   $('#message').text('You have created your Profile successfully!')
   $('#display-Profile').hide()
   $('#display-Profile').show()
   $('#display-Profile-template').hide()
-  console.log('what is event', event)
+  // console.log('what is event', event)
 
   const profileHTML = `
     <h4>The Profile name is: ${event.recruitMes.full_name}</h4>
@@ -30,11 +30,11 @@ const onEditProfileSuccess = function (event) {
 }
 
 const onGetProfilesSuccess = function (event) {
-  console.log('event in ui.js index', event)
+  // console.log('event in ui.js index', event)
   $('#message').text('Below are all of the Profiles')
   $('#message').hide()
   $('#message').text('')
-  console.log('whats event ', event)
+  // console.log('whats event ', event)
   $('#message').show()
   for (let i = 0; i < event.recruitMes.length; i++) {
     const profileHTML = `
@@ -44,9 +44,9 @@ const onGetProfilesSuccess = function (event) {
   <h6>Extra skills are:  ${event.recruitMes[i].extra_skills}</h6>
 `
     // $('#delete-me').on('click', function (event) {
-    //   console.log('event in onclick', event)
+    // console.log('event in onclick', event)
     //   const item = event.recruitMes
-    //   console.log('whats item ', item)
+    // console.log('whats item ', item)
     // })
     $('#message').append(profileHTML)
   }
