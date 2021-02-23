@@ -44,7 +44,8 @@ As a user, id like to delete my post
 As a user, id like to comment on others posts
 
 ### The following is the link to my wireframe imgur
-[WireFrame]()
+[Homepage WireFrame](https://imgur.com/a/r9WVKch)
+[Thread Page WireFrame] (https://imgur.com/FGOaP8G)
 
 ### Unsolved Problems
 I have yet to create a Comment model. I am also having a few issues communicating
