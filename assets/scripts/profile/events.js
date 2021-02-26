@@ -42,6 +42,7 @@ const onViewProfile = function (event) {
 }
 
 const onDeleteProfile = function (event) {
+  console.log('event in delete in events.js ', event)
   event.preventDefault()
   const data = getFormFields(event.target)
   api.deleteOne(data)
