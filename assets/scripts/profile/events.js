@@ -19,7 +19,7 @@ const onGetProfileEdit = function (event) {
   api.getProfile(id)
     .then(ui.onGetProfileEditSuccess)
     .then(() => $('#edit-profile').attr('data-id', id))
-    .catch(ui.onError)
+    .catch(ui.onGetProfileEditFailure)
 }
 
 const onEditProfile = function (event) {

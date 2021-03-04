@@ -23,7 +23,7 @@ const onCreateProfileSuccess = function (event) {
   $('form').trigger('reset')
 }
 const onEditProfileSuccess = function (res) {
-  $('#profile-message').text('The edit was a success, view new Posts using the view Profile option')
+  $('#profile-message').text('The edit was a success, view by clicking "See All Posts" button')
   $('#create-profile').show()
   $('#get-profile').show()
   $('#edit-profile').hide()
@@ -50,13 +50,20 @@ const onGetProfilesSuccess = function (event) {
   }
 }
 
+const onGetProfileEditFailure = function (res) {
+  $('#profile-message').text('you have requested to edit something that is not yours!')
+  $('#edit-profile').hide()
+  // console.log('error res', res.responseJSON.detail)
+  $('form').trigger('reset')
+}
+
 const onGetProfileEditSuccess = function (res) {
   $('#profile-message').text('you have requested to edit the following post')
-  console.log('res', res)
-  if (!res) {
-    $('#edit-profile').hide()
-    $('#profile-message').text('you cannot edit that which you dont own')
-  }
+  // console.log('res', res)
+  // if (!res) {
+  //   $('#edit-profile').hide()
+  //   $('#profile-message').text('you cannot edit that which you dont own')
+  // }
   $('form').trigger('reset')
   $('#create-profile').hide()
   $('#display-profile').hide()
@@ -79,6 +86,7 @@ const onDeleteProfileSuccess = function (event) {
 module.exports = {
   onError,
   onCreateProfileSuccess,
+  onGetProfileEditFailure,
   onEditProfileSuccess,
   onGetProfileEditSuccess,
   onGetProfilesSuccess,
