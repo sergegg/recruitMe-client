@@ -23,11 +23,11 @@ $(() => {
   // create a new profile
   $('#create-profile').on('submit', profileEvents.onCreateProfile)
   // edit your profile
-  $('#profile-message').on('click', '.edit-button', profileEvents.onGetProfileEdit)
+  $('#display-profile').on('click', '.edit-button', profileEvents.onGetProfileEdit)
   // on get profile
   $('#get-profile').on('click', profileEvents.onViewProfile)
   // on delete profile
-  $('#profile-message').on('click', '.delete-button', profileEvents.onDeleteProfile)
+  $('#display-profile').on('click', '.delete-button', profileEvents.onDeleteProfile)
   // on edit profile
   $('#edit-profile').on('submit', profileEvents.onEditProfile)
 })

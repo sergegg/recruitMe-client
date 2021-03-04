@@ -19,13 +19,14 @@ const onCreateProfileSuccess = function (event) {
     <h6>Resume URL is: ${event.recruitMe.resume_Url}</br></h6>
     <h6>Extra skills are:  ${event.recruitMe.extra_skills}</br></h6>
   `
-  $('#display-profile').text(profileHTML)
+  $('#display-profile').html(profileHTML)
   $('form').trigger('reset')
 }
 const onEditProfileSuccess = function (res) {
   $('#profile-message').text('The edit was a success, view new Posts using the view Profile option')
   $('#create-profile').show()
   $('#get-profile').show()
+  $('#edit-profile').hide()
   $('form').trigger('reset')
 }
 
@@ -51,9 +52,14 @@ const onGetProfilesSuccess = function (event) {
 
 const onGetProfileEditSuccess = function (res) {
   $('#profile-message').text('you have requested to edit the following post')
-  // console.log(res)
+  console.log('res', res)
+  if (!res) {
+    $('#edit-profile').hide()
+    $('#profile-message').text('you cannot edit that which you dont own')
+  }
   $('form').trigger('reset')
-  // $('#create-profile').hide()
+  $('#create-profile').hide()
+  $('#display-profile').hide()
   const data = res.recruitMe
   // console.log('data is', data)
   // console.log('data is fullname', data.full_name)
@@ -66,6 +72,7 @@ const onGetProfileEditSuccess = function (res) {
 }
 const onDeleteProfileSuccess = function (event) {
   $('#profile-message').text('You have deleted the requested Post')
+  $('#display-profile').hide()
   $('form').trigger('reset')
   $('#display-Profile').text('')
 }

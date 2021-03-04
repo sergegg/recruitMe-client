@@ -1,5 +1,8 @@
 # Recipe Book Project
 
+### How To
+In order to use this application. Fork and clone this repo using the Fork button on the top right of the page. Then, clone it using the green "Code" button, choose SSH, and copy into your terminal using 'git clone <ssh tag>'. Following that, you may run grunt serve to view this applicaiton on your own local server. Then follow the "How To" on the backend repo to fork and clone the API repo.
+
 ### Planning Story
 While considering creating this front-end, I wanted to create something elegant
 and simple. I wanted to create something which allowed users to enter a website

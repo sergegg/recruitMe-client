@@ -15,8 +15,6 @@ const onCreateProfile = function (event) {
 const onGetProfileEdit = function (event) {
   event.preventDefault()
   $('#edit-profile').show()
-  // console.log(event)
-  // console.log(event.data)
   const id = $(event.target).data('id')
   api.getProfile(id)
     .then(ui.onGetProfileEditSuccess)
