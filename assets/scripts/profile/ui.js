@@ -19,12 +19,13 @@ const onCreateProfileSuccess = function (event) {
     <h6>Resume URL is: ${event.recruitMe.resume_Url}</br></h6>
     <h6>Extra skills are:  ${event.recruitMe.extra_skills}</br></h6>
   `
-  $('#display-profile').html(profileHTML)
+  $('#display-profile').text(profileHTML)
   $('form').trigger('reset')
 }
 const onEditProfileSuccess = function (res) {
   $('#profile-message').text('The edit was a success, view new Posts using the view Profile option')
   $('#create-profile').show()
+  $('#get-profile').show()
   $('form').trigger('reset')
 }
 
@@ -50,12 +51,12 @@ const onGetProfilesSuccess = function (event) {
 
 const onGetProfileEditSuccess = function (res) {
   $('#profile-message').text('you have requested to edit the following post')
-  console.log(res)
+  // console.log(res)
   $('form').trigger('reset')
-  $('#create-profile').hide()
+  // $('#create-profile').hide()
   const data = res.recruitMe
-  console.log('data is', data)
-  console.log('data is fullname', data.full_name)
+  // console.log('data is', data)
+  // console.log('data is fullname', data.full_name)
   $('#edit-profile-name').val(data.full_name)
   $('#edit-profile-dob').val(data.date_of_birth)
   $('#edit-profile-url').val(data.resume_Url)

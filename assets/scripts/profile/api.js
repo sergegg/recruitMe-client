@@ -26,8 +26,8 @@ const getProfile = function (id) {
 }
 
 const editProfile = function (data, id) {
-  console.log('i api data is ', data)
-  console.log('in api id is ', id)
+  // console.log('i api data is ', data)
+  // console.log('in api id is ', id)
   return $.ajax({
     url: config.apiUrl + '/recruitMes/' + id + '/',
     method: 'PATCH',

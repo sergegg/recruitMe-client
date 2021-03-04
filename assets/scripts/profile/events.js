@@ -43,11 +43,11 @@ const onViewProfile = function (event) {
 }
 
 const onDeleteProfile = function (event) {
-  console.log('event in delete in events.js ', event)
+  // console.log('event in delete in events.js ', event)
   event.preventDefault()
   // const data = getFormFields(event.target)
   const id = $(event.target).data('id')
-  console.log('in events ', event.target)
+  // console.log('in events ', event.target)
   api.deleteOne(id)
     .then(ui.onDeleteProfileSuccess)
     .catch(ui.onError)
