@@ -1,5 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
 
-head {
+header {
+  background-color: #22A16A;
+}
 
+#pre-signIn {
+  display: flex;
+  align-items: center;
+  flex-flow: flex-end;
+  flex-direction: column;
+}
+
+#post-signIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-flow: flex-end;
+}
+
+#display-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 }

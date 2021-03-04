@@ -12,10 +12,9 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+    <header>
       <h1>Peer Review Form</h1>
-
       <p id="auth-message">Hello! Please sign up using a fake email and a password containing at least 5 characters</p>
-    <head>
       <div id="pre-signIn">
       <form id="sign-up">
     <input placeholder="Email" type="email" name="credentials[email]" />
@@ -39,9 +38,9 @@
   <input placeholder="New Password" type="password" name="passwords[new]"/>
   <button type="submit">Confirm Changes</button>
       </form>
-  </head>
+  </header>
   <div id="authenticated">
-    <p id="profile-message">Fill out the forms below to create a post! Or click the 'See All Posts' to view all posts</p>
+    <p id="profile-message">Create a new post below! Or click the 'See All Posts' to view all posts</p>
       <form id="create-profile">
         <input placeholder="Full Name" type="name" name="recruitMe[full_name]"/>
         <input placeholder="Date Of Birth (YYYY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
@@ -49,7 +48,6 @@
         <input placeholder="Skills" type="text" name="recruitMe[extra_skills]"/>
         <button type="submit">Create now!</button>
       </form>
-      <p id="display-profile"></p>
       <form id="edit-profile">
         <input id="edit-profile-name" placeholder="Other Full Name" type="name" name="recruitMe[full_name]"/>
         <input id="edit-profile-dob" placeholder="Other Date Of Birth (YYYY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
@@ -60,11 +58,8 @@
       <form id="get-profile">
         <button type="click">See All Posts!</button>
       </form>
+      <p id="display-profile"></p>
   </div>
-      <!-- <form id="delete-profile">
-        <input placeholder="recruitMe ID" type="text" name="recruitMe[_id]" />
-        <button type="click" name="button">Delete a recruitMe!</button>
-      </form> -->
     </div>
   </body>
 </html>

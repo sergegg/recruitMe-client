@@ -16,6 +16,7 @@ const signInSuccess = function (response) {
   $('#post-signIn').show()
   $('#pre-signIn').hide()
   $('#authenticated').show()
+  $('#create-profile').show()
   // store the token which was assigned to the user upon sign in.
   store.user = response.user
   // reset form
@@ -30,7 +31,9 @@ const signOutSuccess = function (response) {
   $('#auth-message').text('Signed out successfully, come back soon! ')
   // erase user token
   $('#post-signIn').hide()
+  $('#pre-signIn').show()
   $('#authenticated').hide()
+  // $('#display-profile').hide()
   store.user = null
   // reset
   $('form').trigger('reset')

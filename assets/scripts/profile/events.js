@@ -33,17 +33,6 @@ const onEditProfile = function (event) {
     .then(ui.onEditProfileSuccess)
     .catch(ui.onError)
 }
-// const onViewProfile = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   if (data.profile._id === '') {
-//     $('#message2').text('Please enter a valid ID & try again...')
-//   } else {
-//     api.viewProfile(data)
-//       .then(ui.onViewProfileSuccess)
-//       .catch(ui.onError)
-//   }
-// }
 
 const onViewProfile = function (event) {
   event.preventDefault()
