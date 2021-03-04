@@ -23,16 +23,16 @@ const onCreateProfileSuccess = function (event) {
   $('form').trigger('reset')
 }
 const onEditProfileSuccess = function (res) {
-  $('#profile-message').text('The edit was a success, view new Profile using the view Profile option')
+  $('#profile-message').text('The edit was a success, view new Posts using the view Profile option')
   $('#create-profile').show()
   $('form').trigger('reset')
 }
 
 const onGetProfilesSuccess = function (event) {
-  $('#profile-message').text('Below are all of the Profiles')
-  $('#profile-message').hide()
-  $('#profile-message').text('')
-  $('#profile-message').show()
+  $('#profile-message').text('Below are all of the Posts')
+  $('#display-profile').hide()
+  $('#display-profile').text('')
+  $('#display-profile').show()
   $('#edit-profile').hide()
   for (let i = 0; i < event.recruitMes.length; i++) {
     const profileHTML = `
@@ -64,7 +64,7 @@ const onGetProfileEditSuccess = function (res) {
   // $('form').trigger('reset')
 }
 const onDeleteProfileSuccess = function (event) {
-  $('#profile-message').text('You have deleted the requested Profile')
+  $('#profile-message').text('You have deleted the requested Post')
   $('form').trigger('reset')
   $('#display-Profile').text('')
 }
