@@ -12,20 +12,21 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Hello!</h1>
+      <h1>Peer Review Form</h1>
 
-      <p id="message">message board</p>
+      <p id="auth-message">Hello! Please sign up using a fake email and a password containing at least 5 characters</p>
+    <head>
       <div id="pre-signIn">
       <form id="sign-up">
     <input placeholder="Email" type="email" name="credentials[email]" />
     <input placeholder="Desired Password" type="password" name="credentials[password]" />
     <input placeholder="Confirm Password" type="password" name="credentials[password_confirmation]" />
-    <button type="submit" name="button">Sign up!</button>
+    <button type="submit">Sign up!</button>
       </form>
       <form id="sign-in">
     <input placeholder="Your Email" type="text" name="credentials[email]" />
     <input placeholder="Your Password" type="password" name="credentials[password]" />
-    <button type="submit" name="button">Sign in!</button>
+    <button type="submit">Sign in!</button>
       </form>
     </div>
     <div id="post-signIn">
@@ -36,25 +37,30 @@
       <form id="change-pw">
   <input placeholder="Old Password" type="password" name="passwords[old]"/>
   <input placeholder="New Password" type="password" name="passwords[new]"/>
-  <button type="submit" name="button">Confirm Changes</button>
+  <button type="submit">Confirm Changes</button>
       </form>
+  </head>
+  <div id="authenticated">
+    <p id="profile-message">Fill out the forms below to create a post! Or click the 'See All Posts' to view all posts</p>
       <form id="create-profile">
         <input placeholder="Full Name" type="name" name="recruitMe[full_name]"/>
-        <input placeholder="Date Of Birth (YY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
+        <input placeholder="Date Of Birth (YYYY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
         <input placeholder="Resume URL" type="link" name="recruitMe[resume_Url]"/>
         <input placeholder="Skills" type="text" name="recruitMe[extra_skills]"/>
-        <button type="submit" name="button">Create now!</button>
+        <button type="submit">Create now!</button>
       </form>
+      <p id="display-profile"></p>
       <form id="edit-profile">
-        <input placeholder="Other Full Name" type="name" name="recruitMe[full_name]"/>
-        <input placeholder="Other Date Of Birth (YY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
-        <input placeholder="Other Resume URL" type="link" name="recruitMe[resume_Url]"/>
-        <input placeholder="Other/New Skills" type="text" name="recruitMe[extra_skills]"/>
-        <button type="submit" name="button">Confirm edit!</button>
+        <input id="edit-profile-name" placeholder="Other Full Name" type="name" name="recruitMe[full_name]"/>
+        <input id="edit-profile-dob" placeholder="Other Date Of Birth (YYYY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
+        <input id="edit-profile-url" placeholder="Other Resume URL" type="link" name="recruitMe[resume_Url]"/>
+        <input id="edit-profile-skills" placeholder="Other/New Skills" type="text" name="recruitMe[extra_skills]"/>
+        <button type="submit">Confirm edit!</button>
       </form>
       <form id="get-profile">
-        <button type="click" name="button">See all RecruitMe Profiles!</button>
+        <button type="click">See All Posts!</button>
       </form>
+  </div>
       <!-- <form id="delete-profile">
         <input placeholder="recruitMe ID" type="text" name="recruitMe[_id]" />
         <button type="click" name="button">Delete a recruitMe!</button>

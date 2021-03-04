@@ -10,6 +10,8 @@ const profileEvents = require('./profile/events.js')
 $(() => {
   $('#pre-signIn').show()
   $('#post-signIn').hide()
+  $('#edit-profile').hide()
+  $('#authenticated').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   // set up the sign up
   $('#sign-in').on('submit', authEvents.onSignIn)
@@ -21,9 +23,11 @@ $(() => {
   // create a new profile
   $('#create-profile').on('submit', profileEvents.onCreateProfile)
   // edit your profile
-  $('#edit-profile').on('click', profileEvents.onEditProfile)
+  $('#profile-message').on('click', '.edit-button', profileEvents.onGetProfileEdit)
   // on get profile
   $('#get-profile').on('click', profileEvents.onViewProfile)
   // on delete profile
-  $('#delete-profile').on('click', profileEvents.onDeleteProfile)
+  $('#profile-message').on('click', '.delete-button', profileEvents.onDeleteProfile)
+  // on edit profile
+  $('#edit-profile').on('submit', profileEvents.onEditProfile)
 })

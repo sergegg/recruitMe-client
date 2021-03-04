@@ -14,10 +14,22 @@ const createProfile = function (data) {
     data: JSON.stringify(data)
   })
 }
-const editProfile = function (data) {
-  // console.log(data)
+
+const getProfile = function (id) {
   return $.ajax({
-    url: config.apiUrl + '/recruitMes/' + data.recruitMes._id,
+    url: config.apiUrl + '/recruitMes/' + id + '/',
+    method: 'GET',
+    headers: {
+      authorization: 'Token ' + store.user.token
+    }
+  })
+}
+
+const editProfile = function (data, id) {
+  console.log('i api data is ', data)
+  console.log('in api id is ', id)
+  return $.ajax({
+    url: config.apiUrl + '/recruitMes/' + id + '/',
     method: 'PATCH',
     headers: {
       authorization: 'Token ' + store.user.token
@@ -25,17 +37,6 @@ const editProfile = function (data) {
     data: JSON.stringify(data)
   })
 }
-
-// const viewProfile = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/Profiles/' + data.Profile._id,
-//     method: 'GET',
-//     headers: {
-//       authorization: 'Token ' + store.user.token
-//     },
-//     data: data
-//   })
-// }
 
 const index = function () {
   return $.ajax({
@@ -46,13 +47,14 @@ const index = function () {
     }
   })
 }
-const deleteOne = function (data) {
+const deleteOne = function (id) {
   // console.log(data)
   // console.log(JSON.stringify(data))
+  // console.log(id)
   return $.ajax({
-    url: config.apiUrl + '/recruitMes/' + data.recruitMes._id,
+    url: config.apiUrl + '/recruitMes/' + id,
     method: 'DELETE',
-    data: JSON.stringify(data),
+    // data: JSON.stringify(data),
     headers: {
       authorization: 'Token ' + store.user.token
     }
@@ -60,6 +62,7 @@ const deleteOne = function (data) {
 }
 module.exports = {
   createProfile,
+  getProfile,
   editProfile,
   index,
   deleteOne
