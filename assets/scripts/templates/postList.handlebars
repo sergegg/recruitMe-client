@@ -1,0 +1,13 @@
+{{#each profiles as |profile|}}
+
+<div id="show-profiles-view">
+<h4>The Profile name is: {{profile.full_name}}</h4>
+<h6>The id is: {{profile.id}}</h6>
+<h6>The D.O.B. is: {{profile.date_of_birth}}</h6>
+<h6>Related URL: {{profile.resume_Url}}</h6>
+<h6>Extra skills are:  {{profile.extra_skills}}</h6>
+<button class="delete-button" data-id="{{profile.id}}">Delete</button>
+<button class="edit-button" data-id="{{profile.id}}">Edit</button>
+</div>
+
+ {{/each}}

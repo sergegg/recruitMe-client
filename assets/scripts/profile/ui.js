@@ -1,7 +1,8 @@
 'use strict'
 // const profileEvents = require('./events.js')
 // const store = require('./../store')
-
+const profileList = require('./../templates/postList.handlebars')
+const profileOne = require('./../templates/postOne.handlebars')
 const onError = function (error) {
   $('#message2').text('Failed to execute, please try again or fix the code. ', error)
 }
@@ -16,19 +17,11 @@ const onCreateProfileSuccess = function (event) {
   //   $('profile-message').text('please enter a valid value ')
   // } else {
   // element.textContent=data;
-  const data = event.recruitMe
-  console.log(data.toString())
-  data.toString()
-  const createdProfileHTML = `
-    <div id="created-profile-view">
-    The New Post Title is: ${data.full_name}
-    The D.O.B. is: ${data.date_of_birth}
-    The ID of the new post is: ${data.id}
-    Resume URL is: ${data.resume_Url}
-    Extra skills are:  ${data.extra_skills}
-    </div>
-  `
-  $('#display-profile').text(createdProfileHTML)
+  // const data = event.recruitMe
+  // console.log(data.toString())
+  // data.toString()
+  const createdProfileHTML = profileOne({ recruitMe: event.recruitMe })
+  $('#display-profile').html(createdProfileHTML)
   // }
   $('form').trigger('reset')
 }
@@ -47,20 +40,8 @@ const onGetProfilesSuccess = function (event) {
   $('#display-profile').text('')
   $('#display-profile').show()
   $('#edit-profile').hide()
-  for (let i = 0; i < event.recruitMes.length; i++) {
-    const profileHTML = `
-  <div id="show-profiles-view">
-  <h4>The Profile name is: ${event.recruitMes[i].full_name}</h4>
-  <h6>The id is: ${event.recruitMes[i].id}</h6>
-  <h6>The D.O.B. is: ${event.recruitMes[i].date_of_birth}</h6>
-  <h6>Related URL: ${event.recruitMes[i].resume_Url}</h6>
-  <h6>Extra skills are:  ${event.recruitMes[i].extra_skills}</h6>
-  <button class="delete-button" data-id="${event.recruitMes[i].id}">Delete</button>
-  <button class="edit-button" data-id="${event.recruitMes[i].id}">Edit</button>
-  </div>
-  `
-    $('#display-profile').append(profileHTML)
-  }
+  const profileHTML = profileList({ profiles: event.recruitMes })
+  $('#display-profile').append(profileHTML)
 }
 
 const onGetProfileEditFailure = function (res) {
