@@ -1,6 +1,5 @@
 'use strict'
 // const profileEvents = require('./events.js')
-
 // const store = require('./../store')
 
 const onError = function (error) {
@@ -12,16 +11,28 @@ const onCreateProfileSuccess = function (event) {
   $('#profile-message').text('You have created your post successfully, here it is below!!')
   // $('#display-Profile').hide()
   // $('#display-Profile').show()
-  const profileHTML = `
-    <h4>The New Post Title is: ${event.recruitMe.full_name}</br></h4>
-    <h6>The D.O.B. is: ${event.recruitMe.date_of_birth}</br></h6>
-    <h6>The ID of the new post is: ${event.recruitMe.id}</br></h6>
-    <h6>Resume URL is: ${event.recruitMe.resume_Url}</br></h6>
-    <h6>Extra skills are:  ${event.recruitMe.extra_skills}</br></h6>
+  // console.log(event.recruitMe)
+  // if ((event.recruitMe.full_name) === ('<' || '>')) {
+  //   $('profile-message').text('please enter a valid value ')
+  // } else {
+  // element.textContent=data;
+  const data = event.recruitMe
+  console.log(data.toString())
+  data.toString()
+  const createdProfileHTML = `
+    <div id="created-profile-view">
+    The New Post Title is: ${data.full_name}
+    The D.O.B. is: ${data.date_of_birth}
+    The ID of the new post is: ${data.id}
+    Resume URL is: ${data.resume_Url}
+    Extra skills are:  ${data.extra_skills}
+    </div>
   `
-  $('#display-profile').html(profileHTML)
+  $('#display-profile').text(createdProfileHTML)
+  // }
   $('form').trigger('reset')
 }
+
 const onEditProfileSuccess = function (res) {
   $('#profile-message').text('The edit was a success, view by clicking "See All Posts" button')
   $('#create-profile').show()
@@ -38,6 +49,7 @@ const onGetProfilesSuccess = function (event) {
   $('#edit-profile').hide()
   for (let i = 0; i < event.recruitMes.length; i++) {
     const profileHTML = `
+  <div id="show-profiles-view">
   <h4>The Profile name is: ${event.recruitMes[i].full_name}</h4>
   <h6>The id is: ${event.recruitMes[i].id}</h6>
   <h6>The D.O.B. is: ${event.recruitMes[i].date_of_birth}</h6>
@@ -45,6 +57,7 @@ const onGetProfilesSuccess = function (event) {
   <h6>Extra skills are:  ${event.recruitMes[i].extra_skills}</h6>
   <button class="delete-button" data-id="${event.recruitMes[i].id}">Delete</button>
   <button class="edit-button" data-id="${event.recruitMes[i].id}">Edit</button>
+  </div>
   `
     $('#display-profile').append(profileHTML)
   }
