@@ -8,21 +8,10 @@ const onError = function (error) {
 }
 
 const onCreateProfileSuccess = function (event) {
-  // console.log('whats the data when we create a profile in API', event)
   $('#profile-message').text('You have created your post successfully, here it is below!!')
-  // $('#display-Profile').hide()
-  // $('#display-Profile').show()
-  // console.log(event.recruitMe)
-  // if ((event.recruitMe.full_name) === ('<' || '>')) {
-  //   $('profile-message').text('please enter a valid value ')
-  // } else {
-  // element.textContent=data;
-  // const data = event.recruitMe
-  // console.log(data.toString())
-  // data.toString()
+  $('#example-post').hide()
   const createdProfileHTML = profileOne({ recruitMe: event.recruitMe })
   $('#display-profile').html(createdProfileHTML)
-  // }
   $('form').trigger('reset')
 }
 
@@ -39,6 +28,7 @@ const onGetProfilesSuccess = function (event) {
   $('#display-profile').hide()
   $('#display-profile').text('')
   $('#display-profile').show()
+  $('#create-profile').show()
   $('#edit-profile').hide()
   const profileHTML = profileList({ profiles: event.recruitMes })
   $('#display-profile').append(profileHTML)
@@ -47,29 +37,19 @@ const onGetProfilesSuccess = function (event) {
 const onGetProfileEditFailure = function (res) {
   $('#profile-message').text('you have requested to edit something that is not yours!')
   $('#edit-profile').hide()
-  // console.log('error res', res.responseJSON.detail)
   $('form').trigger('reset')
 }
 
 const onGetProfileEditSuccess = function (res) {
   $('#profile-message').text('you have requested to edit the following post')
-  // console.log('res', res)
-  // if (!res) {
-  //   $('#edit-profile').hide()
-  //   $('#profile-message').text('you cannot edit that which you dont own')
-  // }
   $('form').trigger('reset')
   $('#create-profile').hide()
   $('#display-profile').hide()
   const data = res.recruitMe
-  // console.log('data is', data)
-  // console.log('data is fullname', data.full_name)
   $('#edit-profile-name').val(data.full_name)
   $('#edit-profile-dob').val(data.date_of_birth)
   $('#edit-profile-url').val(data.resume_Url)
   $('#edit-profile-skills').val(data.extra_skills)
-  // $('#edit-profile-name').val(data.full_name)
-  // $('form').trigger('reset')
 }
 const onDeleteProfileSuccess = function (event) {
   $('#profile-message').text('You have deleted the requested Post')

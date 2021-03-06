@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>RecruitMe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -40,7 +40,14 @@
       </form>
   </header>
   <div id="authenticated">
-    <p id="profile-message">Create a new post below! Or click the 'See All Posts' to view all posts</p>
+    <!-- <button type="click">View Post instructions</button> -->
+    <div id="example-post">
+      <h4>Example Post Template</h4>
+      <h6>Your name should be your full name</h6>
+      <h6>Your date of birth is MM-DD-YYYY</h6>
+      <h6>The resume URL should contain the full path (including the "HTTPS://")</h6>
+      <h6>Your skills should include everything you know regarding the profession, seperated by commas</h6>
+    </div>
       <form id="create-profile">
         <input placeholder="Full Name" type="name" name="recruitMe[full_name]"/>
         <input placeholder="Date Of Birth (YYYY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
@@ -55,6 +62,7 @@
         <input id="edit-profile-skills" placeholder="Other/New Skills" type="text" name="recruitMe[extra_skills]"/>
         <button type="submit">Confirm edit!</button>
       </form>
+      <p id="profile-message">Create a new post above! Or click the 'See All Posts' to view all posts</p>
       <form id="get-profile">
         <button type="click">See All Posts!</button>
       </form>

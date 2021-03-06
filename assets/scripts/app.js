@@ -30,4 +30,6 @@ $(() => {
   $('#display-profile').on('click', '.delete-button', profileEvents.onDeleteProfile)
   // on edit profile
   $('#edit-profile').on('submit', profileEvents.onEditProfile)
+  // show the exmaple profile on click
+  // $('#example-post').on('click', profileEvents.onExample)
 })

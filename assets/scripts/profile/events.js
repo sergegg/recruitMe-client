@@ -24,7 +24,6 @@ const onGetProfileEdit = function (event) {
 
 const onEditProfile = function (event) {
   event.preventDefault()
-  // $('#edit-profile').text()
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
   api.editProfile(data, id)
@@ -34,22 +33,24 @@ const onEditProfile = function (event) {
 
 const onViewProfile = function (event) {
   event.preventDefault()
-  // console.log('event in events.js index', event)
   api.index()
     .then(ui.onGetProfilesSuccess)
     .catch(ui.onError)
 }
 
 const onDeleteProfile = function (event) {
-  // console.log('event in delete in events.js ', event)
   event.preventDefault()
-  // const data = getFormFields(event.target)
   const id = $(event.target).data('id')
-  // console.log('in events ', event.target)
   api.deleteOne(id)
     .then(ui.onDeleteProfileSuccess)
     .catch(ui.onError)
 }
+
+// const onExample = function (event) {
+//   event.preventDefault()
+//   console.log(event)
+//   $('#example-post').show()
+// }
 
 module.exports = {
   onCreateProfile,
@@ -57,4 +58,5 @@ module.exports = {
   onEditProfile,
   onViewProfile,
   onDeleteProfile
+  // onExample
 }
