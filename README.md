@@ -50,7 +50,7 @@ As a user, id like to comment on others posts
 
 ### The following is the link to my wireframe imgur
 [Homepage WireFrame](https://imgur.com/a/r9WVKch)
-[Thread Page WireFrame] (https://imgur.com/FGOaP8G)
+[Thread Page WireFrame](https://imgur.com/FGOaP8G)
 
 ### Unsolved Problems
 I have yet to create a Comment model. I am also having a few issues communicating
@@ -59,4 +59,4 @@ send them to the front-end to crud on created profiles.
 
 ### Image of my site
 Please note, it is still under development
-![recruitMe Site](https://imgur.com/5GuTqt6)
+[recruitMe Site](https://imgur.com/5GuTqt6)
