@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>RecruitMe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+    <header>
+      <h1>Resume Review Forum</h1>
+      <p id="auth-message">Hello! Please sign up using a fake email and a password containing at least 5 characters</p>
+      <div id="pre-signIn">
+      <form id="sign-up">
+    <input placeholder="Email" type="email" name="credentials[email]" />
+    <input placeholder="Desired Password" type="password" name="credentials[password]" />
+    <input placeholder="Confirm Password" type="password" name="credentials[password_confirmation]" />
+    <button type="submit">Sign up!</button>
+      </form>
+      <form id="sign-in">
+    <input placeholder="Your Email" type="text" name="credentials[email]" />
+    <input placeholder="Your Password" type="password" name="credentials[password]" />
+    <button type="submit">Sign in!</button>
+      </form>
+    </div>
+    <div id="post-signIn">
+      <form id="sign-out">
+  <button type="button" name="button">Sign Out!</button>
+  <p>Hope to see you back soon!</p>
+      </form>
+      <form id="change-pw">
+  <input placeholder="Old Password" type="password" name="passwords[old]"/>
+  <input placeholder="New Password" type="password" name="passwords[new]"/>
+  <button type="submit">Confirm Changes</button>
+      </form>
+  </header>
+  <div id="authenticated">
+    <!-- <button type="click">View Post instructions</button> -->
+    <div id="example-post">
+      <h4>Example Post Template</h4>
+      <h6>Your name should be your full name</h6>
+      <h6>Your date of birth is MM-DD-YYYY</h6>
+      <h6>The resume URL should contain the full path (including the "HTTPS://")</h6>
+      <h6>Your skills should include everything you know regarding the profession, seperated by commas</h6>
+    </div>
+      <form id="create-profile">
+        <input placeholder="Full Name" type="name" name="recruitMe[full_name]"/>
+        <input placeholder="Date Of Birth (YYYY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
+        <input placeholder="Resume URL" type="link" name="recruitMe[resume_Url]"/>
+        <input placeholder="Skills" type="text" name="recruitMe[extra_skills]"/>
+        <button type="submit">Create now!</button>
+      </form>
+      <form id="edit-profile">
+        <input id="edit-profile-name" placeholder="Other Full Name" type="name" name="recruitMe[full_name]"/>
+        <input id="edit-profile-dob" placeholder="Other Date Of Birth (YYYY/MM/DD)" type="date" name="recruitMe[date_of_birth]"/>
+        <input id="edit-profile-url" placeholder="Other Resume URL" type="link" name="recruitMe[resume_Url]"/>
+        <input id="edit-profile-skills" placeholder="Other/New Skills" type="text" name="recruitMe[extra_skills]"/>
+        <button type="submit">Confirm edit!</button>
+      </form>
+      <p id="profile-message">Create a new post above! Or click the 'See All Posts' to view all posts</p>
+      <form id="get-profile">
+        <button type="click">See All Posts!</button>
+      </form>
+      <p id="display-profile"></p>
+  </div>
+    </div>
+  </body>
+</html>
